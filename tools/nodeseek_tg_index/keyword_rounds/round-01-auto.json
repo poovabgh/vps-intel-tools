@@ -1,0 +1,112 @@
+{
+  "batch": 1,
+  "total": 100,
+  "keep": 51,
+  "drop": 49,
+  "keep_rate": 0.51,
+  "out": "/workspace/vps-intel-review/tg-index-backfill-2026-10-12/index_classified_batch01.csv",
+  "top_tags": [
+    [
+      "signal:nq",
+      11
+    ],
+    [
+      "generic:yearly",
+      7
+    ],
+    [
+      "brand:zouter",
+      6
+    ],
+    [
+      "generic:vps",
+      5
+    ],
+    [
+      "brand:dmit",
+      5
+    ],
+    [
+      "generic:4837",
+      3
+    ],
+    [
+      "trade:buy",
+      3
+    ],
+    [
+      "brand:bero",
+      3
+    ],
+    [
+      "signal:tq",
+      3
+    ],
+    [
+      "signal:residential",
+      3
+    ],
+    [
+      "generic:peak",
+      3
+    ],
+    [
+      "generic:cn2",
+      3
+    ],
+    [
+      "generic:route",
+      3
+    ],
+    [
+      "generic:monthly",
+      3
+    ],
+    [
+      "signal:9929",
+      3
+    ],
+    [
+      "brand:netcup",
+      2
+    ],
+    [
+      "generic:bf",
+      2
+    ],
+    [
+      "brand:baisi",
+      2
+    ],
+    [
+      "brand:vmiss",
+      2
+    ],
+    [
+      "generic:bandwidth",
+      2
+    ],
+    [
+      "signal:cn2gia",
+      2
+    ],
+    [
+      "generic:traffic",
+      2
+    ],
+    [
+      "signal:cmin2",
+      2
+    ],
+    [
+      "trade:sell",
+      2
+    ],
+    [
+      "signal:test_archive",
+      1
+    ]
+  ],
+  "keywords_file": "/workspace/vps-intel/tools/nodeseek_tg_index/keywords.yml",
+  "keep_threshold": 2
+}

@@ -1,0 +1,1518 @@
+# NodeSeek 电报索引关键词库（keywords.yml）
+#
+# 【重点词】priority.brands + priority.strong_signals
+#   重点观测品牌、NQ/TQ、测试留档、快乐鸡、家宽、线路代号等 —— 命中即倾向保留；深读优先排进重点批次
+# 【通用词】general.brands
+#   通用名单品牌（次要观测）—— 命中也会 keep，但标记 catalog:general，不与重点观测名单混排
+# 【常规词】regular.generic + regular.trade_context
+#   VPS/服务器/NAT/年付/出收标记等 —— 权重累加，达到 keep_threshold 才保留
+# 【噪声词】noise
+#   GPT/Claude账号、手表、社保等 —— 噪声强且服务器分不足则丢弃
+#
+# 光帆 = AWS Lightsail，词条 tag 为 brand:aws（不再用独立 brand:guangfan）
+# version 见下方字段。说明见 KEYWORD_ROUTER.md 与 docs/brands-priority.md / docs/brands-general.md
+#
+version: 6
+keep_threshold: 2
+priority:
+  brands:
+  - kw: DMIT
+    weight: 5
+    tag: brand:dmit
+  - kw: dmit
+    weight: 5
+    tag: brand:dmit
+  - kw: 大妈
+    weight: 4
+    tag: brand:dmit
+  - kw: 搬瓦工
+    weight: 5
+    tag: brand:bandwagon
+  - kw: Bandwagon
+    weight: 5
+    tag: brand:bandwagon
+  - kw: bandwagon
+    weight: 5
+    tag: brand:bandwagon
+  - kw: 瓦工
+    weight: 4
+    tag: brand:bandwagon
+  - kw: VMRack
+    weight: 5
+    tag: brand:vmrack
+  - kw: vmrack
+    weight: 5
+    tag: brand:vmrack
+  - kw: VMRACK
+    weight: 5
+    tag: brand:vmrack
+  - kw: 绿云
+    weight: 5
+    tag: brand:greencloud
+  - kw: GreenCloud
+    weight: 5
+    tag: brand:greencloud
+  - kw: Greencloud
+    weight: 5
+    tag: brand:greencloud
+  - kw: Zouter
+    weight: 5
+    tag: brand:zouter
+  - kw: zouter
+    weight: 5
+    tag: brand:zouter
+  - kw: Netcup
+    weight: 5
+    tag: brand:netcup
+  - kw: netcup
+    weight: 5
+    tag: brand:netcup
+  - kw: BERO
+    weight: 5
+    tag: brand:bero
+  - kw: Bero
+    weight: 5
+    tag: brand:bero
+  - kw: bero
+    weight: 5
+    tag: brand:bero
+  - kw: VPS.Taxi
+    weight: 5
+    tag: brand:vpstaxi
+  - kw: vps.taxi
+    weight: 5
+    tag: brand:vpstaxi
+  - kw: vpstaxi
+    weight: 5
+    tag: brand:vpstaxi
+  - kw: HostHatch
+    weight: 5
+    tag: brand:hosthatch
+  - kw: hosthatch
+    weight: 5
+    tag: brand:hosthatch
+  - kw: LightLayer
+    weight: 5
+    tag: brand:lightlayer
+  - kw: lightlayer
+    weight: 5
+    tag: brand:lightlayer
+  - kw: Gomami
+    weight: 5
+    tag: brand:gomami
+  - kw: gomami
+    weight: 5
+    tag: brand:gomami
+  - kw: VMISS
+    weight: 5
+    tag: brand:vmiss
+  - kw: vmiss
+    weight: 5
+    tag: brand:vmiss
+  - kw: RackNerd
+    weight: 5
+    tag: brand:racknerd
+  - kw: racknerd
+    weight: 5
+    tag: brand:racknerd
+  - kw: HostDzire
+    weight: 5
+    tag: brand:hostdzire
+  - kw: hostdzire
+    weight: 5
+    tag: brand:hostdzire
+  - kw: Akile
+    weight: 5
+    tag: brand:akile
+  - kw: akile
+    weight: 5
+    tag: brand:akile
+  - kw: Geelinx
+    weight: 5
+    tag: brand:geelinx
+  - kw: geelinx
+    weight: 5
+    tag: brand:geelinx
+  - kw: 白丝
+    weight: 4
+    tag: brand:jtti
+  - kw: 懒猫云
+    weight: 4
+    tag: brand:lanmaoyun
+  - kw: 酷网云
+    weight: 4
+    tag: brand:kuwang
+  - kw: Megabox
+    weight: 4
+    tag: brand:megabox
+  - kw: ppflight
+    weight: 4
+    tag: brand:ppflight
+  - kw: 华纳云
+    weight: 5
+    tag: brand:jtti
+  - kw: 华纳
+    weight: 4
+    tag: brand:jtti
+  - kw: 闪盾
+    weight: 5
+    tag: brand:shandun
+  - kw: Shandun
+    weight: 5
+    tag: brand:shandun
+  - kw: shandun
+    weight: 5
+    tag: brand:shandun
+  - kw: minibox
+    weight: 4
+    tag: brand:minibox
+  - kw: MiniBox
+    weight: 4
+    tag: brand:minibox
+  - kw: 懒猫
+    weight: 4
+    tag: brand:lanmaoyun
+  - kw: JTTI
+    weight: 4
+    tag: brand:jtti
+  - kw: BWG
+    weight: 4
+    tag: brand:bandwagon
+  - kw: vmr
+    weight: 3
+    tag: brand:vmrack
+  - kw: VMR
+    weight: 3
+    tag: brand:vmrack
+  - kw: PPFlight
+    weight: 4
+    tag: brand:ppflight
+  - kw: NodeQuality
+    weight: 5
+    tag: signal:nq
+  - kw: NetCup
+    weight: 5
+    tag: brand:netcup
+  - kw: BeroHost
+    weight: 5
+    tag: brand:bero
+  - kw: hostDzire
+    weight: 5
+    tag: brand:hostdzire
+  - kw: Raksmart
+    weight: 5
+    tag: brand:raksmart
+  - kw: raksmart
+    weight: 5
+    tag: brand:raksmart
+  - kw: ShanDun
+    weight: 5
+    tag: brand:shandun
+  - kw: HostDZire
+    weight: 5
+    tag: brand:hostdzire
+  - kw: VMiss
+    weight: 5
+    tag: brand:vmiss
+  - kw: ZOUTER
+    weight: 5
+    tag: brand:zouter
+  - kw: Racknerd
+    weight: 5
+    tag: brand:racknerd
+  - kw: 'RN '
+    weight: 2
+    tag: brand:racknerd
+  - kw: BWH
+    weight: 4
+    tag: brand:bandwagon
+  - kw: MOLite
+    weight: 3
+    tag: brand:akile
+  strong_signals:
+  - kw: 测试留档
+    weight: 5
+    tag: signal:test_archive
+  - kw: 【NQ】
+    weight: 5
+    tag: signal:nq
+  - kw: '[NQ]'
+    weight: 5
+    tag: signal:nq
+  - kw: 【TQ】
+    weight: 5
+    tag: signal:tq
+  - kw: '[TQ]'
+    weight: 5
+    tag: signal:tq
+  - kw: 「TQ」
+    weight: 5
+    tag: signal:tq
+  - kw: 「NQ」
+    weight: 5
+    tag: signal:nq
+  - kw: NQ存档
+    weight: 5
+    tag: signal:nq
+  - kw: NQ+TQ
+    weight: 5
+    tag: signal:nq
+  - kw: 复测
+    weight: 3
+    tag: signal:retest
+  - kw: 测速
+    weight: 3
+    tag: signal:speedtest
+  - kw: traceroute
+    weight: 4
+    tag: signal:trace
+  - kw: MTR
+    weight: 4
+    tag: signal:mtr
+  - kw: 快乐鸡
+    weight: 5
+    tag: signal:happy_chicken
+  - kw: 落地机
+    weight: 5
+    tag: signal:landing
+  - kw: 中转机
+    weight: 5
+    tag: signal:relay
+  - kw: 母鸡
+    weight: 5
+    tag: signal:mother
+  - kw: 家宽
+    weight: 5
+    tag: signal:residential
+  - kw: 真家宽
+    weight: 5
+    tag: signal:residential
+  - kw: 三网
+    weight: 4
+    tag: signal:sanwang
+  - kw: CN2 GIA
+    weight: 5
+    tag: signal:cn2gia
+  - kw: CN2GIA
+    weight: 5
+    tag: signal:cn2gia
+  - kw: CN2 GT
+    weight: 4
+    tag: signal:cn2gt
+  - kw: '9929'
+    weight: 4
+    tag: signal:9929
+  - kw: CMIN2
+    weight: 4
+    tag: signal:cmin2
+  - kw: 软银
+    weight: 4
+    tag: signal:softbank
+  - kw: IIJ
+    weight: 4
+    tag: signal:iij
+  - kw: HiNet
+    weight: 4
+    tag: signal:hinet
+  - kw: Seednet
+    weight: 4
+    tag: signal:seednet
+  - kw: seednet
+    weight: 4
+    tag: signal:seednet
+  - kw: 年付机
+    weight: 3
+    tag: signal:yearly
+  - kw: 出鸡
+    weight: 4
+    tag: signal:resale
+  - kw: 收鸡
+    weight: 4
+    tag: signal:resale
+  - kw: NQ+TP
+    weight: 5
+    tag: signal:nq
+  - kw: 【NQ+TP】
+    weight: 5
+    tag: signal:nq
+  - kw: 买鸡
+    weight: 4
+    tag: signal:chicken_trade
+  - kw: 求鸡
+    weight: 4
+    tag: signal:chicken_trade
+  - kw: 百元鸡
+    weight: 4
+    tag: signal:chicken_trade
+  - kw: 有鸡
+    weight: 3
+    tag: signal:chicken_trade
+  - kw: 鸡险
+    weight: 4
+    tag: signal:chicken_trade
+  - kw: AN5
+    weight: 3
+    tag: signal:dmit_sku
+  - kw: LAX.AN
+    weight: 4
+    tag: signal:dmit_sku
+  - kw: 大带宽
+    weight: 2
+    tag: signal:bandwidth
+  - kw: 测评留档
+    weight: 5
+    tag: signal:test_archive
+  - kw: 自测留档
+    weight: 5
+    tag: signal:test_archive
+  - kw: 测速留档
+    weight: 5
+    tag: signal:test_archive
+  - kw: ip质量
+    weight: 4
+    tag: signal:ip_quality
+  - kw: IP质量
+    weight: 4
+    tag: signal:ip_quality
+  - kw: 落地代理
+    weight: 4
+    tag: signal:landing
+  - kw: 大盘鸡
+    weight: 4
+    tag: signal:chicken_trade
+  - kw: NQ
+    weight: 3
+    tag: signal:nq
+  - kw: TQ
+    weight: 3
+    tag: signal:tq
+  - kw: 收机
+    weight: 4
+    tag: signal:chicken_trade
+  - kw: 出机
+    weight: 4
+    tag: signal:chicken_trade
+  - kw: 干净ip
+    weight: 3
+    tag: signal:ip_quality
+  - kw: 干净IP
+    weight: 3
+    tag: signal:ip_quality
+  - kw: 只测不评
+    weight: 5
+    tag: signal:test_archive
+  - kw: NQ留档
+    weight: 5
+    tag: signal:nq
+  - kw: 小鸡存档
+    weight: 5
+    tag: signal:test_archive
+  - kw: LAX.AS3
+    weight: 4
+    tag: signal:dmit_sku
+  - kw: AS3.Pro
+    weight: 4
+    tag: signal:dmit_sku
+  - kw: Pro.TINY
+    weight: 3
+    tag: signal:dmit_sku
+  - kw: JP.TKY
+    weight: 3
+    tag: signal:vmiss_sku
+  - kw: US.LA
+    weight: 3
+    tag: signal:vmiss_sku
+  - kw: CN.HK
+    weight: 3
+    tag: signal:vmiss_sku
+  - kw: 晚高峰tq
+    weight: 5
+    tag: signal:tq
+  - kw: 晚高峰TQ
+    weight: 5
+    tag: signal:tq
+  - kw: IP质量测评
+    weight: 5
+    tag: signal:ip_quality
+  - kw: ipquality
+    weight: 4
+    tag: signal:ip_quality
+  - kw: 真实家宽
+    weight: 5
+    tag: signal:residential
+  - kw: 动态家宽
+    weight: 5
+    tag: signal:residential
+  - kw: 双家宽
+    weight: 4
+    tag: signal:residential
+  - kw: 🐔
+    weight: 2
+    tag: signal:chicken_emoji
+  - kw: 服務器
+    weight: 2
+    tag: generic:server
+  - kw: 小鸡
+    weight: 3
+    tag: generic:chicken
+  - kw: 灵车
+    weight: 4
+    tag: signal:lemon
+  - kw: 探针
+    weight: 3
+    tag: signal:probe
+  - kw: 移动快乐
+    weight: 4
+    tag: signal:happy_chicken
+  - kw: 电信快乐
+    weight: 4
+    tag: signal:happy_chicken
+  - kw: 快乐节点
+    weight: 4
+    tag: signal:happy_chicken
+  - kw: tri放货
+    weight: 5
+    tag: signal:vmiss_sku
+  - kw: TRI
+    weight: 3
+    tag: signal:vmiss_sku
+  - kw: 放货
+    weight: 2
+    tag: signal:restock
+  - kw: 独服
+    weight: 3
+    tag: generic:dedicated
+  - kw: KVM
+    weight: 2
+    tag: generic:kvm
+  - kw: 公网ip
+    weight: 3
+    tag: signal:ip_quality
+  - kw: 公网IP
+    weight: 3
+    tag: signal:ip_quality
+  - kw: ip 质量
+    weight: 3
+    tag: signal:ip_quality
+  - kw: IXP
+    weight: 3
+    tag: generic:ix
+  - kw: 小水管
+    weight: 3
+    tag: signal:chicken_trade
+  - kw: 出🐔
+    weight: 4
+    tag: signal:chicken_trade
+  - kw: 收🐔
+    weight: 4
+    tag: signal:chicken_trade
+  - kw: 大盘独服
+    weight: 4
+    tag: signal:dedicated
+  - kw: 伪家宽
+    weight: 4
+    tag: signal:residential
+regular:
+  generic:
+  - kw: VPS
+    weight: 2
+    tag: generic:vps
+  - kw: vps
+    weight: 2
+    tag: generic:vps
+  - kw: 服务器
+    weight: 2
+    tag: generic:server
+  - kw: NAT
+    weight: 2
+    tag: generic:nat
+  - kw: nat
+    weight: 2
+    tag: generic:nat
+  - kw: 小鸡
+    weight: 2
+    tag: generic:chicken
+  - kw: 独服
+    weight: 2
+    tag: generic:dedicated
+  - kw: 独立服务器
+    weight: 3
+    tag: generic:dedicated
+  - kw: VDS
+    weight: 2
+    tag: generic:vds
+  - kw: vds
+    weight: 2
+    tag: generic:vds
+  - kw: 合租
+    weight: 1
+    tag: generic:carpool
+  - kw: 拼车
+    weight: 1
+    tag: generic:carpool
+  - kw: 机房
+    weight: 2
+    tag: generic:dc
+  - kw: 线路
+    weight: 2
+    tag: generic:route
+  - kw: 直连
+    weight: 2
+    tag: generic:direct
+  - kw: 优化
+    weight: 1
+    tag: generic:optimized
+  - kw: 带宽
+    weight: 1
+    tag: generic:bandwidth
+  - kw: 流量
+    weight: 1
+    tag: generic:traffic
+  - kw: IPLC
+    weight: 3
+    tag: generic:iplc
+  - kw: IEPL
+    weight: 3
+    tag: generic:iepl
+  - kw: CN2
+    weight: 2
+    tag: generic:cn2
+  - kw: '4837'
+    weight: 2
+    tag: generic:4837
+  - kw: '163'
+    weight: 1
+    tag: generic:163
+  - kw: Cogent
+    weight: 3
+    tag: generic:cogent
+  - kw: 落地
+    weight: 2
+    tag: generic:landing
+  - kw: 中转
+    weight: 2
+    tag: generic:relay
+  - kw: 回国
+    weight: 2
+    tag: generic:backhaul
+  - kw: 去程
+    weight: 3
+    tag: generic:outbound
+  - kw: 回程
+    weight: 3
+    tag: generic:inbound
+  - kw: 晚高峰
+    weight: 2
+    tag: generic:peak
+  - kw: 丢包
+    weight: 2
+    tag: generic:loss
+  - kw: 解锁
+    weight: 1
+    tag: generic:unlock
+  - kw: 原生IP
+    weight: 3
+    tag: generic:native_ip
+  - kw: 原生 ip
+    weight: 3
+    tag: generic:native_ip
+  - kw: 家宽IP
+    weight: 4
+    tag: generic:resi_ip
+  - kw: 补货
+    weight: 1
+    tag: generic:restock
+  - kw: 黑五
+    weight: 1
+    tag: generic:bf
+  - kw: 年付
+    weight: 1
+    tag: generic:yearly
+  - kw: 月付
+    weight: 1
+    tag: generic:monthly
+  - kw: 鸡
+    weight: 1
+    tag: generic:chicken
+  - kw: 2核心
+    weight: 2
+    tag: generic:spec
+  - kw: 4G内存
+    weight: 2
+    tag: generic:spec
+  - kw: 无限流量
+    weight: 2
+    tag: generic:traffic
+  - kw: 机器
+    weight: 1
+    tag: generic:machine
+  - kw: 续费
+    weight: 1
+    tag: generic:renew
+  trade_context:
+  - kw: 【出】
+    weight: 1
+    tag: trade:sell
+  - kw: 【收】
+    weight: 1
+    tag: trade:buy
+  - kw: '[出]'
+    weight: 1
+    tag: trade:sell
+  - kw: '[收]'
+    weight: 1
+    tag: trade:buy
+noise:
+- kw: chatgpt
+  weight: 3
+  tag: noise:ai_account
+- kw: ChatGPT
+  weight: 3
+  tag: noise:ai_account
+- kw: GPT号
+  weight: 4
+  tag: noise:ai_account
+- kw: gpt号
+  weight: 4
+  tag: noise:ai_account
+- kw: gpt账号
+  weight: 4
+  tag: noise:ai_account
+- kw: Claude
+  weight: 3
+  tag: noise:ai_account
+- kw: claude
+  weight: 3
+  tag: noise:ai_account
+- kw: Codex
+  weight: 3
+  tag: noise:ai_account
+- kw: codex
+  weight: 3
+  tag: noise:ai_account
+- kw: Cursor
+  weight: 2
+  tag: noise:ai_account
+- kw: cursor
+  weight: 2
+  tag: noise:ai_account
+- kw: Opus
+  weight: 2
+  tag: noise:ai_account
+- kw: 学生认证
+  weight: 3
+  tag: noise:ai_account
+- kw: 微软365
+  weight: 3
+  tag: noise:saas
+- kw: Microsoft 365
+  weight: 3
+  tag: noise:saas
+- kw: 网盘
+  weight: 2
+  tag: noise:storage
+- kw: Jellyfin
+  weight: 3
+  tag: noise:media
+- kw: 手表
+  weight: 4
+  tag: noise:gadget
+- kw: 华为手机
+  weight: 4
+  tag: noise:gadget
+- kw: 懂车帝
+  weight: 4
+  tag: noise:auto
+- kw: 欧易
+  weight: 3
+  tag: noise:crypto
+- kw: 担保被骗
+  weight: 3
+  tag: noise:scam_non_vps
+- kw: 色情头像
+  weight: 4
+  tag: noise:forum_meta
+- kw: 论坛色情
+  weight: 4
+  tag: noise:forum_meta
+- kw: 谷歌账户
+  weight: 3
+  tag: noise:account
+- kw: talkatone
+  weight: 3
+  tag: noise:voip
+- kw: 域名
+  weight: 2
+  tag: noise:domain
+- kw: paypal争议
+  weight: 2
+  tag: noise:payment
+- kw: 猿辅导
+  weight: 4
+  tag: noise:edu
+- kw: 微信
+  weight: 1
+  tag: noise:social
+- kw: 阿里云北岸码
+  weight: 3
+  tag: noise:cloud_promo_code
+- kw: 优惠码
+  weight: 1
+  tag: noise:promo
+- kw: supergrok
+  weight: 3
+  tag: noise:ai_account
+- kw: 土区gpt
+  weight: 4
+  tag: noise:ai_account
+- kw: Play 商店
+  weight: 3
+  tag: noise:account
+- kw: 运动手表
+  weight: 5
+  tag: noise:gadget
+- kw: 高驰
+  weight: 4
+  tag: noise:gadget
+- kw: 佳明
+  weight: 4
+  tag: noise:gadget
+- kw: gpt挂了
+  weight: 4
+  tag: noise:ai_account
+- kw: GPT代充
+  weight: 4
+  tag: noise:ai_account
+- kw: gpt team
+  weight: 4
+  tag: noise:ai_account
+- kw: GPT PRO
+  weight: 4
+  tag: noise:ai_account
+- kw: 语音输入
+  weight: 4
+  tag: noise:gadget
+- kw: 黑苹果
+  weight: 4
+  tag: noise:gadget
+- kw: Emby
+  weight: 3
+  tag: noise:media
+- kw: 网飞
+  weight: 3
+  tag: noise:media
+- kw: 养号的手机
+  weight: 4
+  tag: noise:gadget
+- kw: DeepSeek
+  weight: 3
+  tag: noise:ai_account
+- kw: gemini
+  weight: 2
+  tag: noise:ai_account
+- kw: 升级老号
+  weight: 4
+  tag: noise:cloud_account
+- kw: 免费号
+  weight: 3
+  tag: noise:cloud_account
+- kw: 甲骨文好难注册
+  weight: 5
+  tag: noise:cloud_account
+- kw: 出甲骨文
+  weight: 4
+  tag: noise:cloud_account
+- kw: Spotify
+  weight: 4
+  tag: noise:saas
+- kw: iphone
+  weight: 4
+  tag: noise:gadget
+- kw: 小红书
+  weight: 3
+  tag: noise:social
+- kw: muse
+  weight: 3
+  tag: noise:saas
+- kw: 图床
+  weight: 3
+  tag: noise:storage
+- kw: 医保
+  weight: 5
+  tag: noise:life
+- kw: AI中转站
+  weight: 4
+  tag: noise:ai_proxy
+- kw: GPT Plus
+  weight: 4
+  tag: noise:ai_account
+- kw: GPTPLUS
+  weight: 4
+  tag: noise:ai_account
+- kw: Team 席位
+  weight: 4
+  tag: noise:ai_account
+- kw: 成品号
+  weight: 3
+  tag: noise:ai_account
+- kw: 邀请码
+  weight: 2
+  tag: noise:invite
+- kw: 洗车
+  weight: 5
+  tag: noise:life
+- kw: 洗衣液
+  weight: 5
+  tag: noise:life
+- kw: 近视眼
+  weight: 5
+  tag: noise:life
+- kw: 摩友
+  weight: 5
+  tag: noise:life
+- kw: 社保
+  weight: 5
+  tag: noise:life
+- kw: A股
+  weight: 5
+  tag: noise:finance
+- kw: 币安
+  weight: 4
+  tag: noise:crypto
+- kw: bybit
+  weight: 4
+  tag: noise:crypto
+- kw: 甲骨文账号
+  weight: 5
+  tag: noise:cloud_account
+- kw: 甲骨文的账号
+  weight: 5
+  tag: noise:cloud_account
+- kw: 升级号
+  weight: 4
+  tag: noise:cloud_account
+- kw: 换绑原邮
+  weight: 4
+  tag: noise:cloud_account
+- kw: 改密
+  weight: 2
+  tag: noise:cloud_account
+- kw: 原邮升级号
+  weight: 5
+  tag: noise:cloud_account
+- kw: aws账号
+  weight: 4
+  tag: noise:cloud_account
+- kw: openrouter
+  weight: 4
+  tag: noise:ai_api
+- kw: 免费API
+  weight: 3
+  tag: noise:ai_api
+- kw: 实体卡要多久
+  weight: 4
+  tag: noise:esim
+- kw: 学生号
+  weight: 3
+  tag: noise:cloud_account
+- kw: 大陆学生号
+  weight: 5
+  tag: noise:cloud_account
+noise_override_min: 3
+noise_override_need_server: 5
+_round_notes: 'round1: +华纳/华为云/光帆/闪盾/Po0/minibox/wawo/懒猫/AN5/买鸡; 拼车权重降1; NQ+TP笔误'
+meta:
+  常规词: regular.* — 需累计达 keep_threshold
+  重点词: priority.brands + priority.strong_signals — 命中即倾向保留
+  噪声词: noise — 强噪声且服务器分不足则丢弃
+general:
+  brands:
+  - kw: OVH
+    weight: 4
+    tag: brand:ovh
+    catalog: general
+  - kw: 凉云
+    weight: 4
+    tag: brand:luyun
+    catalog: general
+  - kw: Virmach
+    weight: 4
+    tag: brand:virmach
+    catalog: general
+  - kw: virmach
+    weight: 4
+    tag: brand:virmach
+    catalog: general
+  - kw: AaITR
+    weight: 4
+    tag: brand:aaitr
+    catalog: general
+  - kw: aaitr
+    weight: 4
+    tag: brand:aaitr
+    catalog: general
+  - kw: BoilCloud
+    weight: 4
+    tag: brand:boilcloud
+    catalog: general
+  - kw: 港仔
+    weight: 4
+    tag: brand:boilcloud
+    catalog: general
+  - kw: KazeCloud
+    weight: 4
+    tag: brand:kaze
+    catalog: general
+  - kw: Kaze
+    weight: 3
+    tag: brand:kaze
+    catalog: general
+  - kw: NodeMach
+    weight: 4
+    tag: brand:nodemach
+    catalog: general
+  - kw: FacHost
+    weight: 4
+    tag: brand:fachost
+    catalog: general
+  - kw: 工厂云
+    weight: 4
+    tag: brand:fachost
+    catalog: general
+  - kw: 云悠
+    weight: 4
+    tag: brand:yunyou
+    catalog: general
+  - kw: vps.town
+    weight: 4
+    tag: brand:vpstown
+    catalog: general
+  - kw: DataWave
+    weight: 4
+    tag: brand:datawave
+    catalog: general
+  - kw: Uzumaru
+    weight: 4
+    tag: brand:uzumaru
+    catalog: general
+  - kw: Starryblu
+    weight: 3
+    tag: brand:starryblu
+    catalog: general
+  - kw: 狗云
+    weight: 4
+    tag: brand:gouyun
+    catalog: general
+  - kw: RFC
+    weight: 3
+    tag: brand:rfc
+    catalog: general
+  - kw: V.PS
+    weight: 4
+    tag: brand:vps
+    catalog: general
+  - kw: 小秘书
+    weight: 4
+    tag: brand:vps
+    catalog: general
+  - kw: Nube
+    weight: 3
+    tag: brand:nube
+    catalog: general
+  - kw: AKCDN
+    weight: 3
+    tag: brand:akcdn
+    catalog: general
+  - kw: Sailly
+    weight: 3
+    tag: brand:sailly
+    catalog: general
+  - kw: sailly
+    weight: 3
+    tag: brand:sailly
+    catalog: general
+  - kw: 华为云
+    weight: 4
+    tag: brand:huaweicloud
+    catalog: general
+  - kw: 光帆
+    weight: 4
+    tag: brand:aws
+    catalog: general
+    note: Lightsail/光帆 → aws
+  - kw: Po0
+    weight: 4
+    tag: brand:po0
+    catalog: general
+  - kw: po0
+    weight: 4
+    tag: brand:po0
+    catalog: general
+  - kw: wawo
+    weight: 4
+    tag: brand:wawo
+    catalog: general
+  - kw: Wawo
+    weight: 4
+    tag: brand:wawo
+    catalog: general
+  - kw: ResidentialVPS
+    weight: 4
+    tag: brand:residentialvps
+    catalog: general
+  - kw: BiggerBox
+    weight: 4
+    tag: brand:biggerbox
+    catalog: general
+  - kw: isvoro
+    weight: 4
+    tag: brand:isvoro
+    catalog: general
+  - kw: Isvoro
+    weight: 4
+    tag: brand:isvoro
+    catalog: general
+  - kw: 喵云
+    weight: 4
+    tag: brand:miaoyun
+    catalog: general
+  - kw: hhost
+    weight: 3
+    tag: brand:hhost
+    catalog: general
+  - kw: RENET
+    weight: 4
+    tag: brand:renet
+    catalog: general
+  - kw: HKS-One
+    weight: 4
+    tag: brand:hksone
+    catalog: general
+  - kw: 甲骨文
+    weight: 2
+    tag: brand:oracle
+    catalog: general
+  - kw: Oracle
+    weight: 2
+    tag: brand:oracle
+    catalog: general
+  - kw: 谷歌云
+    weight: 3
+    tag: brand:gcp
+    catalog: general
+  - kw: GCP
+    weight: 2
+    tag: brand:gcp
+    catalog: general
+  - kw: qqpw
+    weight: 4
+    tag: brand:qqpw
+    catalog: general
+  - kw: DediRock
+    weight: 4
+    tag: brand:dedirock
+    catalog: general
+  - kw: dedirock
+    weight: 4
+    tag: brand:dedirock
+    catalog: general
+  - kw: Hetzner
+    weight: 4
+    tag: brand:hetzner
+    catalog: general
+  - kw: hetzner
+    weight: 4
+    tag: brand:hetzner
+    catalog: general
+  - kw: Skyline
+    weight: 4
+    tag: brand:skyline
+    catalog: general
+  - kw: skyline
+    weight: 4
+    tag: brand:skyline
+    catalog: general
+  - kw: Misaka
+    weight: 4
+    tag: brand:misaka
+    catalog: general
+  - kw: misaka
+    weight: 4
+    tag: brand:misaka
+    catalog: general
+  - kw: akko
+    weight: 4
+    tag: brand:akko
+    catalog: general
+  - kw: Akko
+    weight: 4
+    tag: brand:akko
+    catalog: general
+  - kw: xHosts
+    weight: 4
+    tag: brand:xhosts
+    catalog: general
+  - kw: XHost
+    weight: 4
+    tag: brand:xhosts
+    catalog: general
+  - kw: Novixlink
+    weight: 4
+    tag: brand:novixlink
+    catalog: general
+  - kw: 诺联
+    weight: 4
+    tag: brand:novixlink
+    catalog: general
+  - kw: 新诺联
+    weight: 4
+    tag: brand:novixlink
+    catalog: general
+  - kw: zorocloud
+    weight: 4
+    tag: brand:zorocloud
+    catalog: general
+  - kw: ZoroCloud
+    weight: 4
+    tag: brand:zorocloud
+    catalog: general
+  - kw: ZORO
+    weight: 3
+    tag: brand:zorocloud
+    catalog: general
+  - kw: Moack
+    weight: 4
+    tag: brand:moack
+    catalog: general
+  - kw: moack
+    weight: 4
+    tag: brand:moack
+    catalog: general
+  - kw: Leaseweb
+    weight: 4
+    tag: brand:leaseweb
+    catalog: general
+  - kw: digitalfyre
+    weight: 4
+    tag: brand:digitalfyre
+    catalog: general
+  - kw: DigitalFyre
+    weight: 4
+    tag: brand:digitalfyre
+    catalog: general
+  - kw: Lightsail
+    weight: 4
+    tag: brand:lightsail
+    catalog: general
+  - kw: lightsail
+    weight: 4
+    tag: brand:lightsail
+    catalog: general
+  - kw: Ucloud
+    weight: 4
+    tag: brand:ucloud
+    catalog: general
+  - kw: Fxtransit
+    weight: 4
+    tag: brand:fxtransit
+    catalog: general
+  - kw: Geonix
+    weight: 4
+    tag: brand:geonix
+    catalog: general
+  - kw: geonix
+    weight: 4
+    tag: brand:geonix
+    catalog: general
+  - kw: Datawave
+    weight: 4
+    tag: brand:datawave
+    catalog: general
+  - kw: ISIF
+    weight: 4
+    tag: brand:isif
+    catalog: general
+  - kw: MeowBox
+    weight: 4
+    tag: brand:meow
+    catalog: general
+  - kw: MeowVPS
+    weight: 4
+    tag: brand:meow
+    catalog: general
+  - kw: meowbox
+    weight: 4
+    tag: brand:meow
+    catalog: general
+  - kw: rabisu
+    weight: 4
+    tag: brand:rabisu
+    catalog: general
+  - kw: Rabisu
+    weight: 4
+    tag: brand:rabisu
+    catalog: general
+  - kw: 云途
+    weight: 4
+    tag: brand:yuntu
+    catalog: general
+  - kw: AndNode
+    weight: 4
+    tag: brand:andnode
+    catalog: general
+  - kw: andnode
+    weight: 4
+    tag: brand:andnode
+    catalog: general
+  - kw: 光锥云
+    weight: 4
+    tag: brand:guangzhui
+    catalog: general
+  - kw: HostUS
+    weight: 4
+    tag: brand:hostus
+    catalog: general
+  - kw: hostus
+    weight: 4
+    tag: brand:hostus
+    catalog: general
+  - kw: MoonVM
+    weight: 4
+    tag: brand:moonvm
+    catalog: general
+  - kw: Juhost
+    weight: 4
+    tag: brand:juhost
+    catalog: general
+  - kw: 独角鲸
+    weight: 4
+    tag: brand:unicorn
+    catalog: general
+  - kw: Evoxt
+    weight: 4
+    tag: brand:evoxt
+    catalog: general
+  - kw: evoxt
+    weight: 4
+    tag: brand:evoxt
+    catalog: general
+  - kw: Lamhosting
+    weight: 4
+    tag: brand:lamhosting
+    catalog: general
+  - kw: Khanwebhost
+    weight: 4
+    tag: brand:khanwebhost
+    catalog: general
+  - kw: cloudnium
+    weight: 3
+    tag: brand:cloudnium
+    catalog: general
+  - kw: Shlii
+    weight: 3
+    tag: brand:shlii
+    catalog: general
+  - kw: cloudsilk
+    weight: 4
+    tag: brand:cloudsilk
+    catalog: general
+  - kw: 龟壳
+    weight: 4
+    tag: brand:guiqiao
+    catalog: general
+  - kw: aatir
+    weight: 4
+    tag: brand:aaitr
+    catalog: general
+  - kw: tyyun
+    weight: 3
+    tag: brand:tyyun
+    catalog: general
+  - kw: G11
+    weight: 3
+    tag: brand:netcup_sku
+    catalog: general
+  - kw: Bage
+    weight: 4
+    tag: brand:bage
+    catalog: general
+  - kw: BestVM
+    weight: 4
+    tag: brand:bestvm
+    catalog: general
+  - kw: CloudCone
+    weight: 4
+    tag: brand:cloudcone
+    catalog: general
+  - kw: cloudcone
+    weight: 4
+    tag: brand:cloudcone
+    catalog: general
+  - kw: Hyonix
+    weight: 4
+    tag: brand:hyonix
+    catalog: general
+  - kw: hyonix
+    weight: 4
+    tag: brand:hyonix
+    catalog: general
+  - kw: ColoCrossing
+    weight: 4
+    tag: brand:colocrossing
+    catalog: general
+  - kw: colocrossing
+    weight: 4
+    tag: brand:colocrossing
+    catalog: general
+  - kw: GatewaySentry
+    weight: 4
+    tag: brand:gatewaysentry
+    catalog: general
+  - kw: Gatewaysentry
+    weight: 4
+    tag: brand:gatewaysentry
+    catalog: general
+  - kw: Saltyfish
+    weight: 4
+    tag: brand:saltyfish
+    catalog: general
+  - kw: 咸鱼云
+    weight: 4
+    tag: brand:saltyfish
+    catalog: general
+  - kw: hytron
+    weight: 4
+    tag: brand:hytron
+    catalog: general
+  - kw: 海创
+    weight: 4
+    tag: brand:hytron
+    catalog: general
+  - kw: Panstar
+    weight: 4
+    tag: brand:panstar
+    catalog: general
+  - kw: PanstarCloud
+    weight: 4
+    tag: brand:panstar
+    catalog: general
+  - kw: TotHost
+    weight: 4
+    tag: brand:tothost
+    catalog: general
+  - kw: DataOnline
+    weight: 4
+    tag: brand:dataonline
+    catalog: general
+  - kw: 无聊云
+    weight: 4
+    tag: brand:wuliaoyun
+    catalog: general
+  - kw: Locvps
+    weight: 4
+    tag: brand:locvps
+    catalog: general
+  - kw: LocVPS
+    weight: 4
+    tag: brand:locvps
+    catalog: general
+  - kw: lightcone
+    weight: 4
+    tag: brand:lightcone
+    catalog: general
+  - kw: SixtyNet
+    weight: 4
+    tag: brand:sixtynet
+    catalog: general
+  - kw: sixtynet
+    weight: 4
+    tag: brand:sixtynet
+    catalog: general
+  - kw: Tamago
+    weight: 4
+    tag: brand:tamago
+    catalog: general
+  - kw: Nobrand
+    weight: 4
+    tag: brand:nobrand
+    catalog: general
+  - kw: 面包云
+    weight: 4
+    tag: brand:mianbaoyun
+    catalog: general
+  - kw: 狗妈
+    weight: 3
+    tag: brand:gouma
+    catalog: general
+  - kw: 物语云
+    weight: 3
+    tag: brand:wuyu
+    catalog: general
+  - kw: 腾讯云
+    weight: 3
+    tag: brand:tencent
+    catalog: general
+  - kw: 阿里云
+    weight: 2
+    tag: brand:aliyun
+    catalog: general
+  - kw: AWS
+    weight: 3
+    tag: brand:aws
+    catalog: general
+  - kw: NovixLink
+    weight: 4
+    tag: brand:novixlink
+    catalog: general
+  - kw: novxilink
+    weight: 4
+    tag: brand:novixlink
+    catalog: general
+  - kw: lowend
+    weight: 3
+    tag: brand:lowend
+    catalog: general
+  - kw: Radonet
+    weight: 3
+    tag: brand:radonet
+    catalog: general
+  - kw: Ciallonetworks
+    weight: 3
+    tag: brand:ciallo
+    catalog: general
+  - kw: Yuusei
+    weight: 3
+    tag: brand:yuusei
+    catalog: general
+  - kw: Boil
+    weight: 3
+    tag: brand:boilcloud
+    catalog: general
+  - kw: HHost
+    weight: 3
+    tag: brand:hhost
+    catalog: general
+  - kw: wap.ac
+    weight: 3
+    tag: brand:wapac
+    catalog: general
+  - kw: aws
+    weight: 2
+    tag: brand:aws
+    catalog: general
+  - kw: Lightsail
+    weight: 4
+    tag: brand:aws
+    catalog: general
+  - kw: lightsail
+    weight: 4
+    tag: brand:aws
+    catalog: general
+  - kw: Amazon Lightsail
+    weight: 4
+    tag: brand:aws
+    catalog: general
+  - kw: lowend.cloud
+    weight: 4
+    tag: brand:lowend
+    catalog: general
