@@ -1,29 +1,5 @@
-# Runtime state (cursors, processed ids) — do not commit
-state/*
-!state/.gitkeep
-
-# Queue / work files
-queue/*
-!queue/.gitkeep
-
-# Scraped HTML / raw dumps
-**/raw/
-**/html/
-*.html
-!docs/**/*.md
-
-# Python
+state/
+queue/
+*.pyc
 __pycache__/
-*.py[cod]
-*.egg-info/
-.venv/
-venv/
-
-# OS / editor
 .DS_Store
-*.swp
-.idea/
-.vscode/
-
-# Local review dumps
-*-review/
