@@ -32,8 +32,8 @@ NodeSeek：**电报/RSS 发现 → 关键词分类 → 延迟深读 →（再）
 
 ### 推荐流水线（三步）
 
-1. **Discover（频繁，如每 15–30 分钟）**  
-   TG 增量（`last_tg_msg_id`）+ 可选 RSS（`last_rss_guid`）→ `classify_index` → 写入 `queue/`（`discovered_at`、keep、brand tier）。**此刻不深读。**
+1. **Discover（每 5 分钟，纯脚本）**  
+   官方 RSS → 关键词筛选 → 追加 `queue/buckets/{YYYYMMDD}….csv`（见 `docs/PIPELINE.md`）。**此刻不深读、不耗模型。** 电报索引仅作漏帖兜底。
 
 2. **Process（BJT 五个槽）**  
    只处理「上一关闭发现窗」里的 keep（见下表）。论坛 **首页** 深读；高信号可自动 commit 到 vps-intel；纯收售/券 → 核对文件或带时间窗的 soft-ingest。
@@ -61,7 +61,7 @@ NodeSeek：**电报/RSS 发现 → 关键词分类 → 延迟深读 →（再）
 
 ```
 tools/nodeseek_tg_index/   # TG 索引采集 + 关键词路由（已迁入）
-tools/nodeseek_rss/        # RSS 辅发现（预留 stub）
+tools/nodeseek_rss/        # 官方 RSS → BJT 时段桶（日常主发现）
 schedules/                 # BJT cron 说明
 docs/PIPELINE.md           # 混合流水线定稿
 state/  queue/             # 运行时（gitignore）

@@ -1,18 +1,34 @@
-# NodeSeek 官方 RSS（预留）
+# NodeSeek 官方 RSS → BJT 时段桶
 
-官方 RSS 只保留约最近 **20** 条滚动窗口，适合做「最新信号」补充，**不能**单独承担长期发现。
+**日常主发现**：每 5 分钟拉 `https://rss.nodeseek.com/`，按 `post_id` 去重，用 `tools/nodeseek_tg_index/keywords.yml` + `classify_index` 做关键词筛选，**只把 keep=Y** 追加进当前北京时间时段 CSV。AI **不参与**采集。
 
-## 计划职责
+约定见 [docs/PIPELINE.md](../../docs/PIPELINE.md)。电报索引脚本仅作漏帖兜底，日常可不跑。
 
-- 轮询 `https://rss.nodeseek.com/`（或站点公布的 feed URL）
-- 记录 `last_rss_guid` / 已见链接到 `state/`
-- 新条目写入队列（与 TG 发现共用同一 queue 格式），只做标题级关键词分类，**不做深读**
+## 时段文件（`queue/buckets/`）
 
-## 与 TG 的关系
+| BJT 发现窗 | 文件名 |
+|------------|--------|
+| 00:00–08:00 | `{YYYYMMDD}0008.csv` |
+| 08:00–12:00 | `{YYYYMMDD}0812.csv` |
+| 12:00–16:00 | `{YYYYMMDD}1216.csv` |
+| 16:00–20:00 | `{YYYYMMDD}1620.csv` |
+| 20:00–次日00:00 | `{YYYYMMDD}2000.csv`（日期=起点日） |
 
-| 来源 | 角色 |
-|------|------|
-| 电报频道 `t.me/s/nodeseekc` | **主发现**：可用 `?before=` 翻历史、增量游标稳定 |
-| 官方 RSS | **辅发现**：补漏最新窗；任务宕机或突发 >20 条时会漏 |
+列：`post_id,url,title,pub_date_utc,category,creator,snippet,discovered_at_bjt,matched_keywords,server_score,category_tags`
 
-实现脚本尚未迁入；当前深读流水线仍以 TG 索引为准。见仓库根 [README.md](../../README.md) 与 [docs/PIPELINE.md](../../docs/PIPELINE.md)。
+`state/seen_post_ids.txt`：feed 里出现过的 id 一律记入（含噪声），避免反复重评；最多保留最近约 5000 条。
+
+## 用法
+
+```bash
+# 单轮
+python3 tools/nodeseek_rss/fetch_rss_buckets.py
+
+# 后台每 5 分钟（推荐）
+nohup tools/nodeseek_rss/run_loop.sh >/dev/null 2>&1 &
+# 日志：state/rss_loop.log ；PID：state/rss_loop.pid
+```
+
+环境变量：`RSS_INTERVAL_SEC`（默认 300）、`PYTHON`。
+
+到点分析由 bot 例程读已关闭桶文件完成；入库后应删除对应桶文件。
