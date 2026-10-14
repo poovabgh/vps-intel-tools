@@ -14,3 +14,7 @@
   原因：Grok Bot 没有按次用量 API；[Usage](settings) 是账户总览，拆不出某一档例程。
 
 例程结束后若用户贴了 Usage 截图或数字，可手工补一行 `平台备注`，仍不要虚构 token。
+
+## 与漏斗一起记
+
+- `l1` / `l2` / `l3` 计数、多页抓取帖数、`raw/nodeseek` 归档字节（见 FUNNEL.md）

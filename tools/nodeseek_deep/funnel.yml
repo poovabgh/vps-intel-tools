@@ -1,0 +1,106 @@
+# NodeSeek 深读三层漏斗规则（白话可改）
+# L1：服务器相关（RSS keep 已过；此处再挡噪音）
+# L2：近期线路学习主题 → 升档关注正文/评论信息密度
+# L3：高价值原文归档（完整正文+多页评论+raw HTML）
+
+version: 1
+
+l1_noise_title:
+  - 灵车
+  - Claude封号
+  - GPT封号
+  - 极简探针
+  - YouTube的测速机制
+  - Google Play.*GC折扣
+  - 自动回帖.*机器人
+
+# L2：命中任一即视为「线路学习向」
+l2_theme_patterns:
+  - 线路
+  - 回程
+  - 去程
+  - CN2
+  - GIA
+  - \bGT\b
+  - "9929"
+  - "4837"
+  - CMIN2
+  - CMI
+  - 软银
+  - SoftBank
+  - IIJ
+  - \bNTT\b
+  - 家宽
+  - 落地
+  - \bASN\b
+  - 三网
+  - \bNQ\b
+  - \bTQ\b
+  - NodeQuality
+  - TCPQuality
+  - IP质量
+  - 晚高峰
+  - 强制CN2
+  - 拔线
+  - Cogent
+  - BGP
+  - 精品
+  - 跨网
+  - 丢包
+  - traceroute
+  - MTR
+
+# 类型偏线路/评测/风险 → 更容易 L2
+l2_type_tags:
+  - 线路
+  - 评测
+  - 风险
+
+# 纯交易/收售：默认可 L1 入库，不上 L3（除非正文/评论强命中 L3）
+trade_title_patterns:
+  - ^【?收】
+  - ^【?出】
+  - 已出
+  - 秒出
+  - 人找车
+  - 收台
+  - 折出
+  - 溢价收
+
+# L3 触发：正文或评论出现「信息密度」观点
+l3_density_patterns:
+  - 回程
+  - 去程
+  - \bASN\b
+  - 丢包
+  - 晚高峰
+  - IP质量
+  - 软银.*(互联|上游|体感|和NTT)
+  - IIJ
+  - NTT.*(路径|体感|一样)
+  - 9929.*(好|稳|比)
+  - 4837.*(好|稳|比|美西)
+  - CN2GIA|CN2 GIA|强制CN2
+  - 电信.*(9929|4837|CN2)
+  - 联通.*(9929|4837)
+  - 移动.*(CMIN2|CMI)
+  - 精品BGP
+  - 普通BGP
+  - 国际互联
+  - 超售
+  - 被打
+  - 炸
+  - 解锁
+  - NodeQuality|TCPQuality|\bNQ\b|\bTQ\b
+
+# L3 最少门槛（满足其一）
+l3_min_comment_chars: 80
+l3_min_op_chars: 120
+l3_require_density_hit: true
+
+# 多页抓取
+max_pages: 3
+page_sleep_sec: 0.9
+
+# 证据 markdown 每楼截断（thread.json 仍可存全文）
+evidence_floor_max_chars: 4000
