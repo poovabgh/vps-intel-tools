@@ -202,7 +202,7 @@ def maybe_routing_judgment_note(
         return None
     blob = parsed.get("all_text") or ""
     if not re.search(
-        r"回程|去程|CN2|9929|4837|软银|IIJ|NTT|家宽|丢包|晚高峰|精品|普通BGP|Cogent|IP质量",
+        r"回程|去程|CN2|9929|4837|软银|IIJ|NTT|家宽|丢包|晚高峰|精品|普通BGP|Cogent|IP质量|IX专线|伪IEPL|前海IX|沪港|深港|heptasky|前置|IPLC|IEPL",
         blob,
         re.I,
     ):
@@ -217,7 +217,7 @@ def maybe_routing_judgment_note(
 
     # 抽几条含密度词的评论作要点
     dens = re.compile(
-        r"回程|去程|CN2|9929|4837|软银|IIJ|NTT|家宽|丢包|晚高峰|精品|BGP|IP质量|超售|解锁",
+        r"回程|去程|CN2|9929|4837|软银|IIJ|NTT|家宽|丢包|晚高峰|精品|BGP|IP质量|超售|解锁|IX|伪IEPL|前海|沪港|深港|heptasky|前置|落地|IPLC|IEPL|HKT",
         re.I,
     )
     bullets = []
@@ -267,6 +267,11 @@ def _heuristic_judgment(title: str, blob: str, funnel: dict[str, Any]) -> str:
         bits.append(
             "HK 备用/中转讨论里，电信侧「普通 BGP 不够、要精品/CN2GIA」是反复出现的经验口述；"
             "大厂段抗轮询与专线中转是另一条线索，需对照实测。"
+        )
+    if re.search(r"IX专线|伪IEPL|前海IX|heptasky|QHIX|沪港.?[Ii][Xx]|深港.?[Ii][Xx]|前置", blob, re.I):
+        bits.append(
+            "IX/「专线」DIY：大厂前置 + 商家 IX 跨境管道 + 港（或日）落地；"
+            "口语专线多为共享管道，不等于独占 IPLC/IEPL；延迟口述单人样本勿当基准。"
         )
     if re.search(r"解锁|过白|IP质量", blob, re.I):
         bits.append(

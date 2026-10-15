@@ -48,6 +48,7 @@ BRAND_RULES = [
     (re.compile(r"dmit|大妈", re.I), "dmit"),
     (re.compile(r"绿云|green\s*cloud", re.I), "luyun"),
     (re.compile(r"搬瓦工|bandwagon|\bbwh\b", re.I), "bandwagonhost"),
+    (re.compile(r"heptasky|qhixp?|前海\s*ix", re.I), "heptasky"),
 ]
 
 

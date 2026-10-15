@@ -13,3 +13,5 @@
 - SUMMARY 必含消耗统计 + funnel 计数。
 
 例程未挂载前，可手动触发同一逻辑。
+
+观测主题（漏斗 L2）：除 CN2/软银/家宽等外，**IX/伪IEPL/前置+落地 DIY** 也长期关注（见 `docs/FUNNEL.md`、`funnel.yml`）。

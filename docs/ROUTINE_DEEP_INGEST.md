@@ -39,3 +39,7 @@ PYTHONPATH=tools python3 -m nodeseek_deep.run_bucket_deep_ingest \
 - 登录、发帖、改帖。
 - 交易帖无线路密度时升 L3。
 - 把完整 HTML 只留在核对 `raw/` 却声称「已长期归档」（L3 必须进 `vps-intel/raw/nodeseek/`）。
+
+## 观测主题提醒
+
+L2 线路主题含 CN2/软银/家宽等，以及 **IX/伪IEPL/前置+落地 DIY**（见 FUNNEL.md）。

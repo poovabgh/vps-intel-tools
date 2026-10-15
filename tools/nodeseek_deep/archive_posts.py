@@ -30,6 +30,7 @@ PID_BRAND = {
     "981828": "nobrand",
     "981812": "seednet",
     "981058": "ppflight",
+    "984010": "heptasky",
 }
 
 

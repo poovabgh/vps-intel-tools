@@ -12,7 +12,7 @@
 # 光帆 = AWS Lightsail，词条 tag 为 brand:aws（不再用独立 brand:guangfan）
 # version 见下方字段。说明见 KEYWORD_ROUTER.md 与 docs/brands-priority.md / docs/brands-general.md
 #
-version: 6
+version: 7
 keep_threshold: 2
 priority:
   brands:
@@ -311,6 +311,36 @@ priority:
   - kw: IIJ
     weight: 4
     tag: signal:iij
+  - kw: IX专线
+    weight: 5
+    tag: signal:ix_diy
+  - kw: 伪IEPL
+    weight: 5
+    tag: signal:ix_diy
+  - kw: 前海IX
+    weight: 5
+    tag: signal:ix_diy
+  - kw: 沪港IX
+    weight: 4
+    tag: signal:ix_diy
+  - kw: 深港IX
+    weight: 4
+    tag: signal:ix_diy
+  - kw: QHIX
+    weight: 4
+    tag: signal:ix_diy
+  - kw: QHIXP
+    weight: 4
+    tag: signal:ix_diy
+  - kw: 前置机
+    weight: 4
+    tag: signal:ix_diy
+  - kw: IPLC
+    weight: 3
+    tag: signal:ix_diy
+  - kw: IEPL
+    weight: 3
+    tag: signal:ix_diy
   - kw: HiNet
     weight: 4
     tag: signal:hinet
@@ -1434,6 +1464,18 @@ general:
     catalog: general
   - kw: Nobrand
     weight: 4
+    tag: brand:nobrand
+    catalog: general
+  - kw: HeptaSky
+    weight: 4
+    tag: brand:heptasky
+    catalog: general
+  - kw: heptasky
+    weight: 4
+    tag: brand:heptasky
+    catalog: general
+  - kw: nnb.ltd
+    weight: 3
     tag: brand:nobrand
     catalog: general
   - kw: 面包云

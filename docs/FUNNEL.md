@@ -41,7 +41,8 @@ RSS keep（脚本关键词）
 
 线路 / 回程 / 去程 / CN2 / GIA / GT / 9929 / 4837 / CMIN2 / 软银 / IIJ / NTT /  
 家宽 / 落地 / ASN / 三网 / NQ / TQ / NodeQuality / TCPQuality / IP质量 /  
-晚高峰 / 强制CN2 / 拔线 / Cogent / BGP …
+晚高峰 / 强制CN2 / 拔线 / Cogent / BGP /  
+**IX·专线 DIY**：IX专线 / 伪IEPL / 前海IX / 沪港·深港 IX / heptasky / QHIX / 前置机+落地 / IPLC·IEPL（商家口径）…
 
 纯收售标题即使带品牌名，也只算弱匹配：**可 L1，不上 L3**（除非正文/评论强打线路密度）。
 

@@ -49,6 +49,22 @@ l2_theme_patterns:
   - 丢包
   - traceroute
   - MTR
+  - IX专线
+  - 伪IEPL
+  - 前海IX
+  - 沪港.?[Ii][Xx]
+  - 深港.?[Ii][Xx]
+  - 广港.?[Ii][Xx]
+  - heptasky
+  - HeptaSky
+  - \bQHIX
+  - QHIXP
+  - 前置机
+  - 前置.*落地
+  - \bIXP\b
+  - \bIPLC\b
+  - \bIEPL\b
+  - 成员广播
 
 # 类型偏线路/评测/风险 → 更容易 L2
 l2_type_tags:
@@ -92,6 +108,11 @@ l3_density_patterns:
   - 炸
   - 解锁
   - NodeQuality|TCPQuality|\bNQ\b|\bTQ\b
+  - IX专线|伪IEPL|前海IX
+  - 沪港.?[Ii][Xx]|深港.?[Ii][Xx]
+  - heptasky|QHIX|QHIXP
+  - 前置.*(落地|港)|落地.*(前置|IX)
+  - 成员广播|共享带宽.*出向
 
 # L3 最少门槛（满足其一）
 l3_min_comment_chars: 80
