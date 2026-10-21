@@ -37,6 +37,7 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--force-track", choices=["", "promo", "learning"], default="")
     ap.add_argument("--sample", action="store_true")
     ap.add_argument("--write-raw", action="store_true", help="学习轨 L3 时存 raw/lowendtalk/<id>/")
+    ap.add_argument("--force-raw", action="store_true", help="学习轨即使未升 L3 也写 raw（试点/人工）")
     args = ap.parse_args(argv)
 
     if not args.url and not args.html:
@@ -79,13 +80,12 @@ def main(argv: list[str] | None = None) -> int:
             sample=args.sample or fetched.get("source") == "file",
         )
         written = str(path)
-    elif decision.get("l3") and args.write_raw:
+    elif decision["track"] == "learning" and args.write_raw and (decision.get("l3") or args.force_raw):
         raw_dir = repo / "raw" / "lowendtalk" / str(disc["discussion_id"])
         raw_dir.mkdir(parents=True, exist_ok=True)
         html_path = Path(fetched["path"])
         dest = raw_dir / "page-1.html"
         dest.write_text(Path(html_path).read_text(encoding="utf-8", errors="replace"), encoding="utf-8")
-        meta = {**disc, "funnel": decision}
         # 不存整楼 op_text 过长版权：thread.json 可留摘录
         meta_out = {
             "discussion_id": disc["discussion_id"],
@@ -96,6 +96,7 @@ def main(argv: list[str] | None = None) -> int:
             "created": disc.get("created"),
             "op_excerpt": disc.get("op_excerpt"),
             "comment_count": disc.get("comment_count"),
+            "force_raw": bool(args.force_raw and not decision.get("l3")),
             "funnel": {k: decision[k] for k in ("track", "l1", "l2", "l3", "l2_hits", "l3_hits", "topic_hint", "reasons")},
         }
         (raw_dir / "thread.json").write_text(json.dumps(meta_out, ensure_ascii=False, indent=2), encoding="utf-8")

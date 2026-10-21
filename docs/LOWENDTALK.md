@@ -43,3 +43,9 @@ NodeSeek 与 LowEndTalk **只是渠道不同**；本仓负责 LET 发现/解析�
 ## 流水线位置
 
 见 [PIPELINE.md](PIPELINE.md)。仓库根 README 已列 `tools/lowendtalk/`。
+
+## 试点备注（2026-10-21）
+
+- 计划与跑次见 vps-intel [`docs/LOWENDTALK-PILOT.md`](https://github.com/poovabgh/vps-intel/blob/main/docs/LOWENDTALK-PILOT.md)。
+- 短投诉 / outages 常停在漏斗 L2：学习轨可用 `ingest_discussion --write-raw --force-raw` 强制归档。
+
