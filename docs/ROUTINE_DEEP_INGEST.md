@@ -42,10 +42,10 @@ PYTHONPATH=tools python3 -m nodeseek_deep.run_bucket_deep_ingest \
 
 ## 观测主题提醒
 
-L2 **长期三话题并列**（见 [FUNNEL.md](FUNNEL.md)）：
+L2 **长期三话题并列**（全仓固定四方向之三；见 [FUNNEL.md](FUNNEL.md)，跨渠道）：
 
 1. **线路机 routing**：三网直连、去/回程、延迟丢包、CN2/GIA/9929/4837/CMIN2、软银/IIJ/NTT、IX DIY  
 2. **IP 质量 ip-quality**：纯净度、解锁、AI（ChatGPT/Claude）、TikTok 电商、X/Reddit 社媒、原生/家宽广播、送中  
 3. **建站机 hosting**：性能、带宽、并发、优化、超售、YABS、IO、建站回程体验  
 
-**短期**（优惠/推广/抢购/交易/溢价/拼车/抽奖）：可 L1 + 时间窗，**不轻易 L3**，不当学习基准。
+**短期**（四方向之四：优惠/推广/抢购/交易/溢价/拼车/抽奖）：可 L1 + 时间窗，**不轻易 L3**，不当学习基准。NodeSeek 与 LowEndTalk 同一套。

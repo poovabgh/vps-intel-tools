@@ -1,16 +1,28 @@
 # LowEndTalk 接入说明
 
-与 NodeSeek RSS 环**独立**：不改 `nodeseek_rss`。  
-工具包：`tools/lowendtalk/`。证据与优惠落在 [vps-intel](https://github.com/poovabgh/vps-intel)。
+**主题框架与 NodeSeek 相同**：vps-intel 固定四方向——长期三（线路机 / IP质量 / 建站机）+ 短期一（优惠推广抢购交易溢价）。  
+NodeSeek 与 LowEndTalk **只是渠道不同**；本仓负责 LET 发现/解析，证据与优惠仍落 [vps-intel](https://github.com/poovabgh/vps-intel)。  
+采集管线与 NodeSeek RSS 环**独立**（不改 `nodeseek_rss`），工具包：`tools/lowendtalk/`。
 
-## 双轨
+## 固定四方向（跨渠道）
 
-1. **学习轨** — 主题与 [FUNNEL.md](FUNNEL.md) 长期三话题一致（线路机 / IP质量 / 建站机）。高价值原文：`raw/lowendtalk/<discussion-id>/`。
-2. **优惠推广轨** — Offers 等 → `promos/lowendtalk/`（按日目录 + `index.csv`）。字段：URL、日期、vendor/title、价格时间窗、地点、一句话摘要、confidence。短摘要，不整帖搬运。
+| 方向 | 性质 | LET 落点（与 NS 同一套主题） |
+|------|------|------------------------------|
+| 线路机 routing | 长期 | `docs/learning/routing/`；L3 → `raw/lowendtalk/<id>/` |
+| IP质量 ip-quality | 长期 | `docs/learning/ip-quality/`；同上 |
+| 建站机 hosting | 长期 | `docs/learning/hosting/`；同上 |
+| 优惠推广抢购交易溢价 | 短期 | `promos/lowendtalk/`（按日 + `index.csv`）；打时间窗，不当三长期基准 |
+
+漏斗规则见 [FUNNEL.md](FUNNEL.md)（跨渠道框架；`channel=nodeseek|lowendtalk`）。
+
+## 双轨（实现分轨，主题不另起一套）
+
+1. **学习轨** — 三长期；高价值原文：`raw/lowendtalk/<discussion-id>/`。
+2. **优惠推广轨** — 短期方向 → `promos/lowendtalk/`。字段：URL、日期、vendor/title、价格时间窗、地点、一句话摘要、confidence。短摘要，不整帖搬运。
 
 ## 分类默认
 
-见 `tools/lowendtalk/categories.yml`：offers / shared-hosting-offers / giveaways → promo；reviews → learning；outages/news → learning_risk；providers/general → mixed。
+见 `tools/lowendtalk/categories.yml`：offers / shared-hosting-offers / giveaways → promo（短期）；reviews → learning（三长期）；outages/news → learning_risk；providers/general → mixed。
 
 ## 抓取现实
 
@@ -24,10 +36,10 @@
 
 ## 建议例程（草稿，由父代理决定是否建）
 
-- 频率：每天 1–2 次即可（Offers 更新快但学习价值密度低于 NodeSeek 中文线路帖）。
+- 频率：每天 1–2 次即可（Offers 更新快；学习价值密度因帖而异，主题仍按四方向筛）。
 - 动作：`discover_category --category offers --limit 40 --write-promo 15`；再抽 `reviews` / `outages` 做学习轨。
-- 不与 NodeSeek 五档深读抢同一例程配额。
+- 不与 NodeSeek 五档深读抢同一例程配额；**主题词与升降档标准与 FUNNEL 一致**。
 
 ## 流水线位置
 
-见 [PIPELINE.md](PIPELINE.md) 处理节末尾链接。仓库根 README 已列 `tools/lowendtalk/`。
+见 [PIPELINE.md](PIPELINE.md)。仓库根 README 已列 `tools/lowendtalk/`。

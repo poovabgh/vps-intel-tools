@@ -1,6 +1,10 @@
 # LowEndTalk 分类 → 默认轨道
+# 主题框架：与 NodeSeek 共用 vps-intel 固定四方向（三长期 + 短期一）；本文件只映射「LET 分类 → 哪条轨」
 # track: promo | learning | learning_risk | mixed
-# promo 进 vps-intel/promos/lowendtalk/；learning 走简化漏斗，L3 raw 进 raw/lowendtalk/
+#   promo          = 短期方向（优惠推广抢购交易溢价）→ vps-intel/promos/lowendtalk/
+#   learning       = 三长期（线路机 / IP质量 / 建站机）→ 简化漏斗；L3 raw → raw/lowendtalk/
+#   learning_risk  = 仍属学习轨（风险相关，可进证据）
+#   mixed          = 正文再判；仍落在四方向内，不是 LET 专属主题
 
 base_url: https://lowendtalk.com
 
@@ -8,27 +12,27 @@ categories:
   offers:
     path: /categories/offers
     track: promo
-    note: 商家促销主战场
+    note: 短期—商家促销主战场
   shared-hosting-offers:
     path: /categories/shared-hosting-offers
     track: promo
     weight: weak
-    note: 共享主机优惠，弱相关
+    note: 短期—共享主机优惠，弱相关
   giveaways:
     path: /categories/giveaways
     # 论坛实际 slug 可能是 giveaways-freebies
     alt_paths:
       - /categories/giveaways-freebies
     track: promo
-    note: 抽奖/赠品，强时间窗
+    note: 短期—抽奖/赠品，强时间窗
   reviews:
     path: /categories/reviews
     track: learning
-    note: 评测向，优先学习轨
+    note: 三长期—评测向，优先学习轨
   providers:
     path: /categories/providers
     track: mixed
-    note: 混合；正文再判 promo vs learning
+    note: 混合；正文再判短期 vs 三长期
   general:
     path: /categories/general
     track: mixed
@@ -36,16 +40,16 @@ categories:
   outages:
     path: /categories/outages
     track: learning_risk
-    note: 故障/风险
+    note: 学习轨—故障/风险
   news:
     path: /categories/news
     track: learning_risk
-    note: 新闻/风险相关
+    note: 学习轨—新闻/风险相关
   service-transfers:
     path: /categories/service-transfers
     track: promo
-    note: 转让交易，短期供需
+    note: 短期—转让交易，供需时间窗
   help:
     path: /categories/help
     track: mixed
-    note: 求助；可能含线路/IP 问询
+    note: 混合；可能含线路/IP 问询（三长期）

@@ -51,12 +51,13 @@
 | **00:00** | `…1620`（16–20） | ≥ 4 h |
 | **08:00** | `…2000`（20–00） | ≥ 4 h |
 
-流程：读桶 → **三层漏斗深读**（见 [FUNNEL.md](FUNNEL.md)）→ 写入 [vps-intel](https://github.com/poovabgh/vps-intel) → 推送 → **删桶文件**。  
+流程：读桶 → **三层漏斗深读**（见 [FUNNEL.md](FUNNEL.md)，**跨渠道框架**）→ 写入 [vps-intel](https://github.com/poovabgh/vps-intel) → 推送 → **删桶文件**。  
+固定四方向：长期三（线路机 / IP质量 / 建站机）+ 短期一（优惠推广抢购交易溢价）。`channel=nodeseek|lowendtalk` 只改发现与 `raw/<channel>/`，主题同一套。  
 - **L1**：服务器相关，默认第 1 页，短证据可入库。  
 - **L2**：命中**长期三话题**才升档——线路机（回程/CN2/软银/IX…）/ IP质量（解锁/AI/TikTok/社媒…）/ 建站机（YABS/超售/并发/IO…）。  
-- **L3**：正文/评论信息密度高时才多页（最多 3 页）并保存 HTML 到 `raw/nodeseek/<id>/`；纯收售/优惠默认不上 L3。  
+- **L3**：正文/评论信息密度高时才多页（最多 3 页）并保存 HTML 到 `raw/<channel>/<id>/`（本槽为 NodeSeek → `raw/nodeseek/`）；纯收售/优惠默认不上 L3。  
 例程细则：[ROUTINE_DEEP_INGEST.md](ROUTINE_DEEP_INGEST.md)。  
-LowEndTalk 双轨：[LOWENDTALK.md](LOWENDTALK.md)。
+LowEndTalk 为另一渠道、同一四方向：[LOWENDTALK.md](LOWENDTALK.md)。
 
 ## 职责边界
 
