@@ -36,7 +36,7 @@ NodeSeek：**电报/RSS 发现 → 关键词分类 → 延迟深读 →（再）
    官方 RSS → 关键词筛选 → 追加 `queue/buckets/{YYYYMMDD}….csv`（见 `docs/PIPELINE.md`）。**此刻不深读、不耗模型。** 电报索引仅作漏帖兜底。
 
 2. **Process（BJT 五个槽）**  
-   只处理「上一关闭发现窗」里的 keep（见下表）。按 **三层漏斗** 深读（[docs/FUNNEL.md](docs/FUNNEL.md)）：L1 首页短证据；L2 线路主题升档；**仅 L3** 多页（≤3）并归档 `raw/nodeseek/`。纯收售/券默认 L1 + 时间窗，不轻易 L3。
+   只处理「上一关闭发现窗」里的 keep（见下表）。按 **三层漏斗** 深读（[docs/FUNNEL.md](docs/FUNNEL.md)）：L1 首页短证据；L2 三话题（线路/IP/建站）升档；**仅 L3** 多页（≤3）并归档 `raw/nodeseek/`。纯收售/券默认 L1 + 时间窗，不轻易 L3。
 
 3. **State**  
    `state/`（gitignore）：游标、`processed_post_ids`、`failed_404`。证据正文永不进本仓。
@@ -62,9 +62,12 @@ NodeSeek：**电报/RSS 发现 → 关键词分类 → 延迟深读 →（再）
 ```
 tools/nodeseek_tg_index/   # TG 索引采集 + 关键词路由（已迁入）
 tools/nodeseek_rss/        # 官方 RSS → BJT 时段桶（日常主发现）
-tools/nodeseek_deep/       # 三层漏斗深读 + L3 原文归档
+tools/nodeseek_deep/       # 三层漏斗深读 + L3 原文归档（长期三话题）
+tools/lowendtalk/          # LowEndTalk 双轨：学习 + promos/
 schedules/                 # BJT cron 说明
 docs/PIPELINE.md           # 混合流水线定稿
+docs/LOWENDTALK.md         # LET 接入与 CF 说明
+docs/FUNNEL.md             # 三话题漏斗
 state/  queue/             # 运行时（gitignore）
 ```
 

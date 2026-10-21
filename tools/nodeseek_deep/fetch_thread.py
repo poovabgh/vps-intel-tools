@@ -1,13 +1,14 @@
 """按页拉取 NodeSeek 帖子 SSR HTML（无登录）。"""
 from __future__ import annotations
 
+import os
 import re
 import subprocess
 import time
 from pathlib import Path
 from typing import Any
 
-UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
 
 
 def post_url(post_id: str | int, page: int = 1) -> str:
@@ -25,6 +26,10 @@ def curl_to_file(url: str, dest: Path, timeout: int = 45) -> dict[str, Any]:
         "-o", str(dest),
         url,
     ]
+    jar = os.environ.get("NODESEEK_COOKIE_JAR", "").strip()
+    if jar:
+        # Insert cookie jar after program name so curl sends/stores clearance cookies.
+        cmd[1:1] = ["-b", jar, "-c", jar]
     try:
         r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout + 15)
         m = re.search(r"__HTTP__:(\d+)", r.stdout or "")

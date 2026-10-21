@@ -1,4 +1,4 @@
-"""三层漏斗升降档规则。"""
+"""三层漏斗升降档规则（长期：线路机 / IP质量 / 建站机；短期：优惠交易从严不上 L3）。"""
 from __future__ import annotations
 
 import re
@@ -30,6 +30,8 @@ def _builtin_defaults() -> dict[str, Any]:
             r"落地", r"\bASN\b", r"三网", r"\bNQ\b", r"\bTQ\b", r"NodeQuality",
             r"TCPQuality", r"IP质量", r"晚高峰", r"强制CN2", r"拔线", r"Cogent",
             r"BGP", r"精品", r"跨网", r"丢包",
+            r"解锁", r"ChatGPT", r"TikTok", r"Reddit", r"Twitter", r"社媒",
+            r"原生IP", r"送中", r"建站", r"YABS", r"超售", r"并发", r"Geekbench",
         ],
         "l2_type_tags": ["线路", "评测", "风险"],
         "trade_title_patterns": [
@@ -123,9 +125,15 @@ class Funnel:
         if re.search(r"线路|回程|去程|CN2|GIA|9929|4837|CMI|软银|三网|晚高峰|BGP|跨网", blob, re.I):
             if not re.search(r"^【?收】|^【?出】", title or ""):
                 return "线路"
+        if re.search(r"IP质量|解锁|ChatGPT|Claude|TikTok|Reddit|Twitter|社媒|原生IP|送中|流媒体", blob, re.I):
+            if not re.search(r"^【?收】|^【?出】", title or ""):
+                return "评测"  # IP 质量讨论归评测向，便于 L2
+        if re.search(r"建站|YABS|超售|并发|Geekbench|IOPS", blob, re.I):
+            if not re.search(r"^【?收】|^【?出】", title or ""):
+                return "评测"
         if self.is_trade_title(title or "") or "trade" in (tags or ""):
             return "交易"
-        if re.search(r"黑五|促销|活动|优惠|券|抽奖", blob):
+        if re.search(r"黑五|促销|活动|优惠|券|抽奖|拼车|抢购|Giveaway", blob, re.I):
             return "活动"
         if re.search(r"人找车|求推荐|有没有.*(落地|家宽|鸡)", title or ""):
             return "需求"
@@ -181,7 +189,7 @@ class Funnel:
 
         # 纯交易弱匹配：可 L1，默认不上 L3
         if result["is_trade"] and not result["l2"]:
-            result["reasons"].append("交易帖：仅 L1，不上 L3")
+            result["reasons"].append("交易/优惠帖：仅 L1，不上 L3")
             return result
 
         if not result["l2"]:

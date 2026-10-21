@@ -1,0 +1,51 @@
+# LowEndTalk 分类 → 默认轨道
+# track: promo | learning | learning_risk | mixed
+# promo 进 vps-intel/promos/lowendtalk/；learning 走简化漏斗，L3 raw 进 raw/lowendtalk/
+
+base_url: https://lowendtalk.com
+
+categories:
+  offers:
+    path: /categories/offers
+    track: promo
+    note: 商家促销主战场
+  shared-hosting-offers:
+    path: /categories/shared-hosting-offers
+    track: promo
+    weight: weak
+    note: 共享主机优惠，弱相关
+  giveaways:
+    path: /categories/giveaways
+    # 论坛实际 slug 可能是 giveaways-freebies
+    alt_paths:
+      - /categories/giveaways-freebies
+    track: promo
+    note: 抽奖/赠品，强时间窗
+  reviews:
+    path: /categories/reviews
+    track: learning
+    note: 评测向，优先学习轨
+  providers:
+    path: /categories/providers
+    track: mixed
+    note: 混合；正文再判 promo vs learning
+  general:
+    path: /categories/general
+    track: mixed
+    note: 混合；正文再判
+  outages:
+    path: /categories/outages
+    track: learning_risk
+    note: 故障/风险
+  news:
+    path: /categories/news
+    track: learning_risk
+    note: 新闻/风险相关
+  service-transfers:
+    path: /categories/service-transfers
+    track: promo
+    note: 转让交易，短期供需
+  help:
+    path: /categories/help
+    track: mixed
+    note: 求助；可能含线路/IP 问询

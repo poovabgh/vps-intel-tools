@@ -53,9 +53,10 @@
 
 流程：读桶 → **三层漏斗深读**（见 [FUNNEL.md](FUNNEL.md)）→ 写入 [vps-intel](https://github.com/poovabgh/vps-intel) → 推送 → **删桶文件**。  
 - **L1**：服务器相关，默认第 1 页，短证据可入库。  
-- **L2**：命中线路学习主题（回程/CN2/软银/NQ/IX专线·伪IEPL·前海IX·heptasky…）才升档。  
-- **L3**：正文/评论信息密度高时才多页（最多 3 页）并保存 HTML 到 `raw/nodeseek/<id>/`；纯收售默认不上 L3。  
-例程细则：[ROUTINE_DEEP_INGEST.md](ROUTINE_DEEP_INGEST.md)。
+- **L2**：命中**长期三话题**才升档——线路机（回程/CN2/软银/IX…）/ IP质量（解锁/AI/TikTok/社媒…）/ 建站机（YABS/超售/并发/IO…）。  
+- **L3**：正文/评论信息密度高时才多页（最多 3 页）并保存 HTML 到 `raw/nodeseek/<id>/`；纯收售/优惠默认不上 L3。  
+例程细则：[ROUTINE_DEEP_INGEST.md](ROUTINE_DEEP_INGEST.md)。  
+LowEndTalk 双轨：[LOWENDTALK.md](LOWENDTALK.md)。
 
 ## 职责边界
 

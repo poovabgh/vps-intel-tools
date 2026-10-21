@@ -1,9 +1,11 @@
 # NodeSeek 深读三层漏斗规则（白话可改）
 # L1：服务器相关（RSS keep 已过；此处再挡噪音）
-# L2：近期线路学习主题 → 升档关注正文/评论信息密度
+# L2：长期三话题学习向 → 升档关注正文/评论信息密度
+#     1) routing 线路机  2) ip-quality IP质量  3) hosting 建站机
 # L3：高价值原文归档（完整正文+多页评论+raw HTML）
+# 短期：优惠/推广/抢购/交易/溢价/拼车/抽奖 → 可 L1，打时间窗，不轻易 L3
 
-version: 1
+version: 2
 
 l1_noise_title:
   - 灵车
@@ -14,8 +16,12 @@ l1_noise_title:
   - Google Play.*GC折扣
   - 自动回帖.*机器人
 
-# L2：命中任一即视为「线路学习向」
+# ---------------------------------------------------------------------------
+# L2：命中任一即视为「学习向」（三长期话题并列）
+# 注释分组仅供人读；运行时仍是同一列表
+# ---------------------------------------------------------------------------
 l2_theme_patterns:
+  # --- routing 线路机：三网直连 / 去回程 / 延迟丢包 ---
   - 线路
   - 回程
   - 去程
@@ -34,11 +40,6 @@ l2_theme_patterns:
   - 落地
   - \bASN\b
   - 三网
-  - \bNQ\b
-  - \bTQ\b
-  - NodeQuality
-  - TCPQuality
-  - IP质量
   - 晚高峰
   - 强制CN2
   - 拔线
@@ -65,14 +66,58 @@ l2_theme_patterns:
   - \bIPLC\b
   - \bIEPL\b
   - 成员广播
+  # --- ip-quality：纯净度 / 解锁 / AI / 社媒 / TikTok ---
+  - IP质量
+  - \bNQ\b
+  - \bTQ\b
+  - NodeQuality
+  - TCPQuality
+  - 纯净
+  - 解锁
+  - Netflix
+  - Disney\+?
+  - ChatGPT
+  - \bClaude\b
+  - OpenAI
+  - Gemini
+  - TikTok
+  - 抖音电商
+  - 社媒
+  - \bTwitter\b
+  - \bX\.com\b
+  - Reddit
+  - 原生IP
+  - 家宽广播
+  - 送中
+  - 风险分
+  - IP.?污染
+  - 流媒体
+  # --- hosting 建站机：性能 / 带宽 / 并发 / 优化 ---
+  - 建站
+  - YABS
+  - 超售
+  - 并发
+  - IOPS
+  - \bIO\b.?性能
+  - 磁盘.?IO
+  - 单核
+  - 带宽.?打满
+  - 口速
+  - 优化.?建站
+  - 回程.?建站
+  - 访客.?打开
+  - 性能.?评测
+  - Geekbench
+  - fio
 
-# 类型偏线路/评测/风险 → 更容易 L2
+# 类型偏线路/评测/风险 → 更容易 L2（与三话题对齐）
 l2_type_tags:
   - 线路
   - 评测
   - 风险
 
-# 纯交易/收售：默认可 L1 入库，不上 L3（除非正文/评论强命中 L3）
+# 短期话题：优惠/推广/抢购/交易/溢价/拼车/抽奖
+# 默认可 L1 入库，打时间窗，不上 L3（除非正文/评论强命中 L3 密度）
 trade_title_patterns:
   - ^【?收】
   - ^【?出】
@@ -83,7 +128,21 @@ trade_title_patterns:
   - 折出
   - 溢价收
 
-# L3 触发：正文或评论出现「信息密度」观点
+promo_title_patterns:
+  - 黑五
+  - Black.?Friday
+  - 促销
+  - 优惠
+  - 抽奖
+  - 拼车
+  - 抢购
+  - 限量
+  - 补货
+  - 券码
+  - 活动价
+  - Giveaway
+
+# L3 触发：正文或评论出现「信息密度」观点（三话题均可）
 l3_density_patterns:
   - 回程
   - 去程
@@ -107,6 +166,11 @@ l3_density_patterns:
   - 被打
   - 炸
   - 解锁
+  - ChatGPT|OpenAI|Claude|Gemini
+  - TikTok|Reddit|Twitter|社媒
+  - 原生IP|家宽广播|送中|风险分
+  - YABS|Geekbench|IOPS|并发
+  - 建站.*(回程|带宽|延迟)
   - NodeQuality|TCPQuality|\bNQ\b|\bTQ\b
   - IX专线|伪IEPL|前海IX
   - 沪港.?[Ii][Xx]|深港.?[Ii][Xx]

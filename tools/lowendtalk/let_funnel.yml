@@ -1,0 +1,50 @@
+# LowEndTalk 简化漏斗：主题与 NodeSeek 三长期话题对齐
+# 短期优惠/交易：可进 promo 轨，学习轨不轻易 L3
+
+version: 1
+
+# 标题/分类已判 promo 时走优惠轨，不再升学习 L3
+promo_title_patterns:
+  - (?i)sale
+  - (?i)deal
+  - (?i)offer
+  - (?i)promo
+  - (?i)discount
+  - (?i)black\s*friday
+  - (?i)giveaway
+  - (?i)coupon
+  - (?i)\$\d+.*/\s*(mo|month|year|yr)
+  - (?i)€\d+
+  - 优惠
+  - 促销
+  - 抽奖
+  - 抢购
+
+l2_theme_patterns:
+  # routing
+  - (?i)\bCN2\b
+  - (?i)\bGIA\b
+  - (?i)9929|4837|CMIN2|\bCMI\b
+  - (?i)SoftBank|IIJ|\bNTT\b
+  - (?i)traceroute|\bMTR\b|BGP|latency|packet\s*loss
+  - (?i)\bIXP?\b|IEPL|IPLC
+  - 线路|回程|去程|三网|丢包|晚高峰|家宽|落地
+  # ip-quality
+  - (?i)IP\s*quality|clean\s*IP|native\s*IP
+  - (?i)Netflix|Disney|ChatGPT|OpenAI|Claude|TikTok|Reddit|Twitter
+  - (?i)unlock|streaming|residential
+  - 解锁|纯净|原生IP|送中|社媒|流媒体
+  # hosting
+  - (?i)\bYABS\b|Geekbench|IOPS|oversell
+  - (?i)benchmark|nvme|throughput
+  - 建站|超售|并发|性能
+
+l3_density_patterns:
+  - (?i)traceroute|\bMTR\b|latency|packet\s*loss
+  - (?i)CN2\s*GIA|9929|4837|CMIN2
+  - (?i)ChatGPT|Netflix|TikTok|Reddit|unlock
+  - (?i)YABS|Geekbench|IOPS|oversell
+  - 回程|去程|丢包|解锁|超售|建站
+
+l3_min_op_chars: 120
+l3_require_density_hit: true

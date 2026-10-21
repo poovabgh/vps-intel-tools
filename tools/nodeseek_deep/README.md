@@ -7,10 +7,10 @@ NodeSeek 论坛深读与 L3 原文归档。无登录、curl SSR only。
 | 层 | 含义 | 动作 |
 |----|------|------|
 | **L1** | 服务器相关（RSS keep） | 抓第 1 页；噪音跳过；可入库短证据 |
-| **L2** | 近期线路学习主题 | 升档关注正文/评论密度 |
+| **L2** | 长期三话题（线路机 / IP质量 / 建站机） | 升档关注正文/评论密度 |
 | **L3** | 高价值观点/测速/路由讨论 | 最多 3 页评论；完整正文；`raw/nodeseek/<id>/` + `thread.json` + `*-thread.md` |
 
-交易帖默认可 L1，不轻易 L3。
+交易/优惠帖默认可 L1，不轻易 L3。三话题说明见 [docs/FUNNEL.md](../../docs/FUNNEL.md)。
 
 ## 例程怎么调用
 
@@ -51,4 +51,4 @@ PYTHONPATH=tools python3 -m nodeseek_deep.archive_posts \
 - `brands/<slug>/evidence/<date>-…-thread.md` — 全文旁路（不毁旧摘要）
 - `raw/nodeseek/<post_id>/page-1.html` … `page-N.html`
 - `raw/nodeseek/<post_id>/thread.json`
-- `docs/learning/routing/notes/<date>-ns-<id>-judgment.md` — 短判断（有线路观点时）
+- `docs/learning/{routing|ip-quality|hosting}/notes/<date>-ns-<id>-judgment.md` — 短判断（按话题）
