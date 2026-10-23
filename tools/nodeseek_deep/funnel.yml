@@ -189,3 +189,66 @@ page_sleep_sec: 0.9
 
 # 证据 markdown 每楼截断（thread.json 仍可存全文）
 evidence_floor_max_chars: 4000
+
+# ---------------------------------------------------------------------------
+# 母鸡 / 产品线盯梢（人读 + 日后可接匹配；当前漏斗算法不强制用）
+# 优惠排查须对照 intel: docs/learning/short-term/mother-chicken-watch-2026-10.md
+# 品牌+产品线命中时优先记时间窗；不自动下单；特征非评价
+# ---------------------------------------------------------------------------
+mother_chicken:
+  doc: docs/learning/short-term/mother-chicken-watch-2026-10.md
+  brands:
+    - ACCK
+    - Akile
+    - ZoroCloud
+    - 怪兽云
+    - TmhHost
+    - GoodlyCloud
+    - 吉云
+    - 云悠
+    - 丽萨主机
+    - 六六云
+    - 奈云
+    - iOVZ
+    - WePC
+    - TechnoVM
+    - FlawlessNode
+    - 微亚云
+    - 伤心的云
+    - 白丝云
+    - ByteVirt
+    - ISIF
+    - Ciallo
+    - PanstarCloud
+    - 艾云
+    - ShanDun
+    - 闪盾
+    - 咸鱼云
+    - 绿云
+    - GreenCloud
+    - xTom
+    - V.PS
+    - DMIT
+    - 搬瓦工
+    - BandwagonHost
+    - VMRack
+    - VMISS
+    - NoSLACloud
+    - Gomami
+    - Neburst
+    - ZgoCloud
+    - HostDare
+    - Hytron
+    - 海创
+    - HostDzire
+    - HKT
+    - zlidc
+    - Loclix
+    - LogicWeb
+    - RackNerd
+    - CloudCone
+    - Zouter
+    - Oracle
+    - 甲骨文
+    - AWS
+    - 光帆

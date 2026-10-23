@@ -59,6 +59,8 @@
 纯收售标题即使带品牌名，也只算弱匹配：**可 L1，不上 L3**（除非正文/评论强打学习密度）。  
 LET Offers 等默认进 `promos/lowendtalk/`，仍属本方向，不是 LET 专属主题。
 
+**母鸡 / 产品线盯梢**：NodeSeek（及日后 LET）做优惠排查时，须对照 intel 仓 [`docs/learning/short-term/mother-chicken-watch-2026-10.md`](https://github.com/poovabgh/vps-intel/blob/main/docs/learning/short-term/mother-chicken-watch-2026-10.md)。品牌 + 产品线命中 → **优先记时间窗**；不自动下单；「已知特征」非评价。词库旁注见 `tools/nodeseek_deep/funnel.yml` → `mother_chicken`。
+
 ## L1 — 服务器相关
 
 - **已过**：渠道发现层 keep（NS：RSS 时段桶；LET：分类列表等）。

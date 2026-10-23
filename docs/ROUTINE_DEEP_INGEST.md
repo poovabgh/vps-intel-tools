@@ -48,4 +48,4 @@ L2 **长期三话题并列**（全仓固定四方向之三；见 [FUNNEL.md](FUN
 2. **IP 质量 ip-quality**：纯净度、解锁、AI（ChatGPT/Claude）、TikTok 电商、X/Reddit 社媒、原生/家宽广播、送中  
 3. **建站机 hosting**：性能、带宽、并发、优化、超售、YABS、IO、建站回程体验  
 
-**短期**（四方向之四：优惠/推广/抢购/交易/溢价/拼车/抽奖）：可 L1 + 时间窗，**不轻易 L3**，不当学习基准。NodeSeek 与 LowEndTalk 同一套。
+**短期**（四方向之四：优惠/推广/抢购/交易/溢价/拼车/抽奖）：可 L1 + 时间窗，**不轻易 L3**，不当学习基准。NodeSeek 与 LowEndTalk 同一套。 优惠排查须对照 intel [`mother-chicken-watch-2026-10.md`](https://github.com/poovabgh/vps-intel/blob/main/docs/learning/short-term/mother-chicken-watch-2026-10.md)（品牌+产品线命中优先记时间窗）。

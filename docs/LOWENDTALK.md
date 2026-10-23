@@ -13,6 +13,8 @@ NodeSeek 与 LowEndTalk **只是渠道不同**；本仓负责 LET 发现/解析�
 | 建站机 hosting | 长期 | `docs/learning/hosting/`；同上 |
 | 优惠推广抢购交易溢价 | 短期 | `promos/lowendtalk/`（按日 + `index.csv`）；打时间窗，不当三长期基准 |
 
+短期优惠排查（与 NodeSeek 同一母鸡清单）：intel [`mother-chicken-watch-2026-10.md`](https://github.com/poovabgh/vps-intel/blob/main/docs/learning/short-term/mother-chicken-watch-2026-10.md) — 品牌+产品线命中优先记时间窗。
+
 漏斗规则见 [FUNNEL.md](FUNNEL.md)（跨渠道框架；`channel=nodeseek|lowendtalk`）。
 
 ## 双轨（实现分轨，主题不另起一套）
